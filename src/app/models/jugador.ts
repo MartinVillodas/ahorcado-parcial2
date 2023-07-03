@@ -2,9 +2,9 @@ export class Jugador{
     nombre: string;
     puntos: number;
   
-    constructor(nombre: string){
+    constructor(nombre: string, puntos: number){
       this.nombre = nombre;
-      this.puntos = 0;
+      this.puntos = puntos;
     }
   }
   

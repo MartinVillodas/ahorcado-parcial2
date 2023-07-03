@@ -35,9 +35,8 @@ export class JugadorService {
     return this.jugadores;
   }
 
-  agregarJugador(nombre: string){
-    const p = new Jugador(nombre);
-    this.jugadores.push(p);
+  agregarJugador(j: Jugador){
+    this.jugadores.push(j);
     return this.guardarNombreUsuario();
   }
   

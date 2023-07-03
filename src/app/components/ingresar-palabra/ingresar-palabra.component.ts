@@ -34,6 +34,7 @@ export class IngresarPalabraComponent {
   juegoGanado = false;
 
   jugadorNuevo = "";
+  puntosJugador = 0;
   arrJugadores: Jugador[] = [];
 
   constructor(private db: PalabraService, private jugadorService: JugadorService){
@@ -73,6 +74,7 @@ export class IngresarPalabraComponent {
       if(this.letra === letra){
         this.arrCoincidencias[index] = letra;
         aciertos++;
+        this.puntosJugador++;
       }
     });
     if(aciertos == 0){
@@ -118,7 +120,8 @@ export class IngresarPalabraComponent {
   //FUNCIONES DE JUGADOR
 
   guardarNombre() {
-    this.jugadorService.agregarJugador(this.jugadorNuevo)
+    const jugador = new Jugador(this.jugadorNuevo,this.puntosJugador);
+    this.jugadorService.agregarJugador(jugador)
       .then(() => {
         console.log('Nombre de usuario guardado exitosamente');
       })
