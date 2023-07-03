@@ -1,0 +1,37 @@
+<h3 class="d-flex justify-content-center align-items-center">Agregar Palabras Nuevas</h3>
+
+<form class="d-flex justify-content-center align-items-center">
+<input type="text" [(ngModel)]="palabraNueva" [ngModelOptions]="{standalone: true}"  />
+<br>
+
+<button (click)="AgregarPalabra()" type="button" class="btn btn-primary" > Agregar</button>
+</form>
+
+<br><br>
+<div *ngIf="alertOk" class="alert alert-success" role="alert">
+  Palabra Agregada!
+</div>
+
+<div *ngIf="alertErr" class="alert alert-danger" role="alert">
+  Ups!.. Ocurrió un error!
+</div>
+<div class="d-flex justify-content-center align-items-center">
+<label >
+  Palabras en la Base de Datos
+</label>
+</div>
+  <table class="table table-dark table-hover" style="  margin-top: 10px; margin-bottom: 20px; text-align: center;  margin: 0 auto; width: 50% ;height: 50%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Longitud</th>
+        <th>Palabra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let palabra of arrPalabras">
+        <td>{{palabra.longitud}}</td> 
+        <td>{{palabra.palabra}}</td>
+      </tr>
+    </tbody>
+  </table> 
+

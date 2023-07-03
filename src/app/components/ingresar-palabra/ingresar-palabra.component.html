@@ -1,0 +1,64 @@
+<!-- <div class="card text-white bg-secondary mb-3" style="max-width: 35rem;"> -->
+  <!--<img [src]="imagen[idx]" class="card-img-top" height="200px" > -->
+  <div class="d-flex justify-content-center align-items-center">
+    <img [src]="imagen[idx]" height="200px">
+  </div>
+  
+  <!--<div class="card-body">-->
+
+    <h5 class="d-flex justify-content-center align-items-center">{{arrCoincidencias | json}}</h5>
+
+  <!--</div>-->
+<!--</div> -->
+
+  <form>
+    <div *ngIf="input">
+        <h4>
+          Ingresa una letra
+        </h4>
+        <br>
+        <input type="text" [(ngModel)]="letra" [ngModelOptions]="{standalone: true}"  (keyup)="revisarPalabra()"/>
+          <br>
+      </div>
+
+      <div *ngIf="juegoTerminado" class="alert alert-danger" role="alert">
+        <p>Perdiste. La palabra era: "{{palabraAdivinar}}"</p>
+      </div>
+      <div class="alert alert-info justify-content-center align-items-center" style="display: grid;" *ngIf="juegoGanado" role="alert"> <!--class="alert alert-info"-->
+        <p>Ganaste. La palabra era: "{{palabraAdivinar}}"</p>
+        <img [src]="imagen[7]" height="200px"> <!--class="card-img-top"-->
+      </div>
+
+    <!--
+    <label>
+      Ya ingresaste {{intentos | json}}
+    </label>-->
+    
+    <ul class="justify-content-center align-items-center" style="display: grid;">
+      <li *ngFor="let intento of intentos">{{ intento }}</li>
+    </ul>
+    
+
+  </form>
+
+  <form>
+  <h4>Ingrese su nombre</h4>
+  <input type="text" [(ngModel)]="jugadorNuevo" [ngModelOptions]="{standalone: true}"/>
+  <br><br>
+  <button (click)="guardarNombre()" type="button" class="btn btn-success" >Guardar</button>
+  </form>
+
+  <table class="table table-dark table-hover" style="  margin-top: 20px; margin-bottom: 20px; text-align: center;  margin: 0 auto; width: 50% ;height: 50%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th>Puntos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jugador of arrJugadores">
+        <td>{{jugador.nombre}}</td> 
+        <td>{{jugador.puntos}}</td>
+      </tr>
+    </tbody>
+  </table> 

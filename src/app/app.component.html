@@ -1,0 +1,21 @@
+<body style="background-image: url('assets/images/fondo.png') ">
+  <h1 style="font-weight: bold ; text-align:center;">Juego del Ahorcado</h1>
+    <!--<div class="container">-->
+    <app-ingresar-palabra *ngIf="componenteJugar"></app-ingresar-palabra>
+    <br>
+    <app-agregar-palabra *ngIf="componenteAgregar"></app-agregar-palabra>
+    <br>
+    
+    
+    <!--</div>-->
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button (click)="agregarPalabras()" class="btn btn-success" *ngIf="componenteJugar" type="button">Agregar Palabras Nuevas</button>
+    <button (click)="regresarJuego()" class="btn btn-success" *ngIf="componenteAgregar" type="button">Regresar al Juego</button>
+    <button class="btn btn-secondary" *ngIf="componenteJugar" type="button">Reiniciar juego</button>
+  </div>
+
+  <br>
+    <br>
+    <br>
+    <br>
+</body>

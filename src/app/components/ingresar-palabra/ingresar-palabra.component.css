@@ -1,0 +1,84 @@
+h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  form {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  .alert {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+  
+  /*
+  table {
+    width: 50%;
+    height: 50%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Centrar horizontalmente */
+    /*margin-top: 20px;*/ /* Agregar un margen superior */
+    /*margin-bottom: 20px;*/ /* Agregar un margen inferior */
+    /*text-align: center;
+  }
+  */
+
+  /*
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    font-weight: bold;
+  } */
+  /*
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }*/
+  /*
+  ul{
+    text-align: center;
+  }
+  li{
+    text-align: center;
+  }
+  */
